@@ -5,9 +5,9 @@ import api from '../../api/api';
 const statusColors = { available:'#22c55e', occupied:'#ef4444', maintenance:'#f59e0b' };
 
 const typeImages = {
-  Single: require('../../../assets/images/room-single.png'),
-  Double: require('../../../assets/images/room-double.png'),
-  Suite: require('../../../assets/images/room-suite.png'),
+  Single: require('../../../assets/images/room_single.png'),
+  Double: require('../../../assets/images/room_double.png'),
+  Suite: require('../../../assets/images/room_suite.png'),
 };
 
 export default function RoomListScreen({ navigation }) {
