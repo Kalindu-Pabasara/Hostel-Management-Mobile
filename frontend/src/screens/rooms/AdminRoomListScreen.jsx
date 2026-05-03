@@ -5,9 +5,9 @@ import CustomAlert from '../../components/CustomAlert';
 import EmptyState from '../../components/EmptyState';
 
 const typeImages = {
-  Single: require('../../../assets/images/room-single.png'),
-  Double: require('../../../assets/images/room-double.png'),
-  Suite: require('../../../assets/images/room-suite.png'),
+  Single: require('../../../assets/images/room_single.png'),
+  Double: require('../../../assets/images/room_double.png'),
+  Suite: require('../../../assets/images/room_suite.png'),
 };
 
 export default function AdminRoomListScreen({ navigation }) {
