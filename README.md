@@ -1,4 +1,4 @@
-# 🏨 HostelMS — Mobile Hostel Management System
+# 🏨 HostelMS — Hostel Management Mobile Application
 
 A high-performance, full-stack mobile application for managing hostel operations, built with **React Native**, **Node.js**, and **MongoDB Atlas**.
 
