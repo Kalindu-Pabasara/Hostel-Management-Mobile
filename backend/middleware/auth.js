@@ -1,38 +1,28 @@
-// middleware/auth.js – JWT authentication & role guards
 const jwt = require('jsonwebtoken');
-const JWT_SECRET = process.env.JWT_SECRET || 'hostelms_secret';
 
-/**
- * authenticate – verifies Bearer JWT token
- * Attaches decoded user to req.user
- */
-function authenticate(req, res, next) {
-    const authHeader = req.headers['authorization'];
-    if (!authHeader || !authHeader.startsWith('Bearer ')) {
-        return res.status(401).json({ message: 'No token provided. Please log in.' });
-    }
-    const token = authHeader.split(' ')[1];
-    try {
-        const decoded = jwt.verify(token, JWT_SECRET);
-        req.user = decoded;
-        next();
-    } catch (err) {
-        if (err.name === 'TokenExpiredError') {
-            return res.status(401).json({ message: 'Session expired. Please log in again.' });
-        }
-        return res.status(401).json({ message: 'Invalid token. Please log in.' });
-    }
-}
+// ── Middleware 1: Verify JWT token ──────────────────────────────
+// Every protected route runs this first. It reads the token from
+// the request header, verifies it, and attaches the user info.
+const authenticate = (req, res, next) => {
+  const authHeader = req.headers.authorization;
+  if (!authHeader || !authHeader.startsWith('Bearer '))
+    return res.status(401).json({ message: 'No token provided.' });
 
-/**
- * requireAdmin – must be used after authenticate
- * Rejects non-admin users with 403
- */
-function requireAdmin(req, res, next) {
-    if (!req.user || req.user.role !== 'admin') {
-        return res.status(403).json({ message: 'Access denied. Admin only.' });
-    }
-    next();
-}
+  const token = authHeader.split(' ')[1];
+  try {
+    req.user = jwt.verify(token, process.env.JWT_SECRET); // decode token
+    next(); // valid → continue to the route
+  } catch {
+    res.status(401).json({ message: 'Invalid or expired token.' });
+  }
+};
+
+// ── Middleware 2: Admin only ────────────────────────────────────
+// Runs AFTER authenticate. Blocks students from admin routes.
+const requireAdmin = (req, res, next) => {
+  if (req.user?.role !== 'admin')
+    return res.status(403).json({ message: 'Admin access required.' });
+  next();
+};
 
 module.exports = { authenticate, requireAdmin };
