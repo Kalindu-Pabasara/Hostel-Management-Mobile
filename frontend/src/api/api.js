@@ -2,7 +2,6 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // Your computer's WiFi IP address + backend port
-// Change this to your Render URL after deployment
 export const BASE_URL = 'https://hostel-management-mobile.onrender.com';
 
 const api = axios.create({
