@@ -66,7 +66,6 @@ The following documents and diagrams are available in the `Docs/` folder:
 *   [System Architecture Diagram](./Docs/System_Architecture_Diagram.pdf)
 *   [Database Schema Diagram](./Docs/Database_Schema_Diagram.pdf)
 *   [API Endpoint Table](./Docs/API_Endpoint_Table.pdf)
-*   [Submission README](./Docs/README.txt)
 
 ---
 
