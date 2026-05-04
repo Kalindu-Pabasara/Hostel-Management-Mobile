@@ -59,10 +59,16 @@ HostelMS simplifies hostel administration and student life by digitizing room di
 *   **Custom Alerts**: Unified design for all system feedback and warnings.
 *   **Empty State UI**: Professional illustrations for empty lists/data.
 
+## 📂 Project Documentation
+The following documents and diagrams are available in the `Docs/` folder:
+*   [Problem Statement](./Docs/Problem_Statement..pdf)
+*   [Team Responsibilities](./Docs/Team_Responsibility.pdf)
+*   [System Architecture Diagram](./Docs/System_Architecture_Diagram.pdf)
+*   [Database Schema Diagram](./Docs/Database_Schema_Diagram.pdf)
+*   [API Endpoint Table](./Docs/API_Endpoint_Table.pdf)
+*   [Submission README](./Docs/README.txt)
+
 ---
 
-
-
-
 ## 📄 License
-This project is for academic purposes at SLIIT (WMT Module).
+This project is for academic purposes at SLIIT (ITP Module).
