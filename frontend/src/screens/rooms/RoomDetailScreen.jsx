@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native';
 import { useAuth } from '../../context/AuthContext';
+import api from '../../api/api';
 
 const statusColors = { available:'#22c55e', occupied:'#ef4444', maintenance:'#f59e0b' };
 
